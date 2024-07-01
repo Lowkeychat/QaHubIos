@@ -20,8 +20,6 @@ func checkThat<T>(
             if result { break }
             
             if retry < retries {
-                let group = DispatchGroup()
-                
                syncWait(retryTimeout)
             }
         }
