@@ -1,7 +1,7 @@
 import XCTest
 import OSLog
 
-public class BaseTest: XCTestCase {
+open class BaseTest: XCTestCase {
     var skipAlerts: Bool = true
     var errorMessage: String?
     var failureScreenshot: Data? = nil

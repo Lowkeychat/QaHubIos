@@ -1,36 +1,36 @@
 import Foundation
 import XCTest
 
-public class MobileElements<T: MobileElement> {
+open class MobileElements<T: MobileElement> {
     let query: XCUIElementQuery
 
     var count: Int {
         get { query.count }
     }
     
-    required init(_ query: XCUIElementQuery) {
+    required public init(_ query: XCUIElementQuery) {
         self.query = query
     }
     
-    func getRawElements() -> [XCUIElement] {
+    public func getRawElements() -> [XCUIElement] {
         return query.allElementsBoundByIndex
     }
     
-    func getElements() -> [T] {
+    public func getElements() -> [T] {
         return query.allElementsBoundByIndex.map { element in
             T(element)
         }
     }
     
-    func last() -> T {
+    public func last() -> T {
         getElement(count - 1)
     }
     
-    func first() -> T {
+    public func first() -> T {
         getElement(0)
     }
 
-    func getElement(_ number: Int) -> T {
+    public func getElement(_ number: Int) -> T {
         let element = query.element(boundBy: number)
         element.waitForElement()
 

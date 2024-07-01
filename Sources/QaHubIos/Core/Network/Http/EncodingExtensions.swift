@@ -1,6 +1,6 @@
 import Foundation
 
-extension Encodable {
+public extension Encodable {
     func data() throws -> Data {
         let jsonEncoder = JSONEncoder()
         let jsonData = try jsonEncoder.encode(self)
@@ -8,7 +8,7 @@ extension Encodable {
     }
 }
 
-extension Data {
+public extension Data {
      var prettyPrintedJSONString: NSString? {
         guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
               let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),

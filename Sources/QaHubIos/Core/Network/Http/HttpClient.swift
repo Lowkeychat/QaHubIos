@@ -8,7 +8,7 @@ enum ContentType: String {
 }
 
 
-public class HttpClient {
+open class HttpClient {
     private let XCtest = XCTestCase()
     private let sessionManager: Session
 

@@ -1,14 +1,14 @@
 import Foundation
 import XCTest
 
-public class MobileElement: ScopingFunctionSupported {
+open class MobileElement: ScopingFunctionSupported {
     let rootView: XCUIElement
 
-    required init(_ element: XCUIElement = XCUIApplication()) {
+    required public init(_ element: XCUIElement = XCUIApplication()) {
         self.rootView = element
     }
     
-    convenience init(_ identifier: String, _ type: XCUIElement.ElementType = .any) {
+    convenience public init(_ identifier: String, _ type: XCUIElement.ElementType = .any) {
         let view = XCUIApplication()
             .descendants(matching: type)
             .element(matching: type, identifier: identifier)
@@ -16,11 +16,11 @@ public class MobileElement: ScopingFunctionSupported {
         self.init(view)
     }
     
-    convenience init(_ e: MobileElement) {
+    convenience public init(_ e: MobileElement) {
         self.init(e.rootView)
     }
   
-    func childElement<T: MobileElement>(_ identifier: String, _ type: XCUIElement.ElementType = .any) -> T {
+    public func childElement<T: MobileElement>(_ identifier: String, _ type: XCUIElement.ElementType = .any) -> T {
         T(
             rootView
                 .descendants(matching: type)
@@ -29,7 +29,7 @@ public class MobileElement: ScopingFunctionSupported {
         )
     }
     
-    func childElements<R: MobileElement, T: MobileElements<R>>(_ identifier: String, _ type: XCUIElement.ElementType = .any) -> T {
+    public func childElements<R: MobileElement, T: MobileElements<R>>(_ identifier: String, _ type: XCUIElement.ElementType = .any) -> T {
         T(
             rootView
                 .descendants(matching: type)
