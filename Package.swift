@@ -3,25 +3,25 @@
 import PackageDescription
 
 let package = Package(
-    name: "QaHubIosFramework",
+    name: "QaHubIos",
     platforms: [
            .iOS(.v16)
        ],
     products: [
         .library(
-            name: "QaHubIosFramework",
-            targets: ["QaHubIosFramework"]),
+            name: "QaHubIos",
+            targets: ["QaHubIos"]),
     ],
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.9.1")),
     ],
     targets: [
         .target(
-            name: "QaHubIosFramework",
+            name: "QaHubIos",
             dependencies: ["Alamofire"]
         ),
         .testTarget(
-            name: "QaHubIosFrameworkTests",
-            dependencies: ["QaHubIosFramework"]),
+            name: "QaHubIosTests",
+            dependencies: ["QaHubIos"]),
     ]
 )
