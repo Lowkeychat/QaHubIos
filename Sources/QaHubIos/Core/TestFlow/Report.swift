@@ -1,11 +1,11 @@
 import XCTest
 
 public class Report {
-    static var testId: String = ""
-    static var testSteps: [TestStep] = []
-    static var currentStepId = "0"
+    public static var testId: String = ""
+    public static var testSteps: [TestStep] = []
+    public static var currentStepId = "0"
     
-    static func clear() {
+    public static func clear() {
         currentStepId = "0"
         testSteps = []
 
@@ -18,17 +18,17 @@ public class Report {
         Allure.thread(thread)
     }
 
-    static func preparation(_ description: String, stepBody: () -> Void) {
+    public static func preparation(_ description: String, stepBody: () -> Void) {
         let name = "SetUp: \(description)"
         wrapActivity(activityName: name) { stepBody() }
     }
 
-    static func tearDown(_ description: String, stepBody: () -> Void) {
+    public static func tearDown(_ description: String, stepBody: () -> Void) {
         let name = "TearDown: \(description)"
         wrapActivity(activityName: name) { stepBody() }
     }
 
-    static func test(_ testcaseId: String, _ testcaseName: String, testBody: () -> Void) {
+    public static func test(_ testcaseId: String, _ testcaseName: String, testBody: () -> Void) {
         let activityName = "Test: \(testcaseName). TestcaseId: \(testcaseId)"
         
         if testId.isEmpty {
@@ -41,29 +41,29 @@ public class Report {
     }
 
     @discardableResult
-    static func step<T: Any>(_ description: String, stepBody: () -> T) -> T {
+    public static func step<T: Any>(_ description: String, stepBody: () -> T) -> T {
         let name = "Step: \(description)"
 
         return wrapActivity(activityName: name) { stepBody() }
     }
     
     @discardableResult
-    static func unsafeStep<T: Any>(_ description: String, stepBody: ()  throws -> T) rethrows -> T {
+    public static func unsafeStep<T: Any>(_ description: String, stepBody: ()  throws -> T) rethrows -> T {
         let name = "Step: \(description)"
         return try wrapActivity(activityName: name) { try stepBody() }
     }
 
-    static func check(_ description: String, stepBody: () -> Void) {
+    public static func check(_ description: String, stepBody: () -> Void) {
         let name = "Check: \(description)"
         wrapActivity(activityName: name) { stepBody() }
     }
 
-    static func sql(_ description: String, stepBody: () -> Void) {
+    public static func sql(_ description: String, stepBody: () -> Void) {
         let name = "SQL-query: \(description)"
         wrapActivity(activityName: name) { stepBody() }
     }
     
-    static func http<T: Any>(_ description: String, stepBody: () throws -> T?) rethrows -> T? {
+    public static func http<T: Any>(_ description: String, stepBody: () throws -> T?) rethrows -> T? {
         let name = "HTTPS-request: \(description)"
         return try wrapActivity( activityName: name) { try stepBody() }
     }
@@ -93,7 +93,7 @@ public class Report {
         return result
     }
 
-    static func appendStep(name: String, parentId: String) -> TestStep {
+    public static func appendStep(name: String, parentId: String) -> TestStep {
         if parentId == "0" {
             let testStep = TestStep(
                 name: name,
@@ -121,7 +121,7 @@ public class Report {
         }
     }
 
-    static func findStepRecursively(id: String, _ currentSteps: [TestStep] = testSteps) -> TestStep? {
+    public static func findStepRecursively(id: String, _ currentSteps: [TestStep] = testSteps) -> TestStep? {
         var result: TestStep?
         currentSteps.forEach { existingStep in
             if existingStep.id == String(id) {
