@@ -1,7 +1,7 @@
 import XCTest
 import OSLog
 
-class BaseTest: XCTestCase {
+public class BaseTest: XCTestCase {
     var skipAlerts: Bool = true
     var errorMessage: String?
     var failureScreenshot: Data? = nil
@@ -9,7 +9,7 @@ class BaseTest: XCTestCase {
     
     private var interruptionMonitors: [NSObjectProtocol] = []
     
-    override func setUp() {
+    public override func setUp() {
         Report.clear()
         
         super.setUp()
@@ -24,7 +24,7 @@ class BaseTest: XCTestCase {
     }
     
    
-   override func tearDown() {
+    public override func tearDown() {
         if (errorMessage != nil) {
             failureScreenshot = XCUIScreen.main.screenshot().image.jpegData(compressionQuality: 0.5)
         }

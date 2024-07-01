@@ -1,6 +1,6 @@
 import XCTest
 
-extension Optional {
+public extension Optional {
     func unwrap(_ description: String = "Optional value") -> Wrapped {
         if let wrapped = self {
             return wrapped

@@ -1,6 +1,6 @@
 import XCTest
 
-func syncWait(_ time: Double) {
+public func syncWait(_ time: Double) {
     let group = DispatchGroup()
     group.enter()
     DispatchQueue.global(qos: .default).asyncAfter(deadline: .now() + time) {
@@ -9,7 +9,7 @@ func syncWait(_ time: Double) {
     group.wait()
 }
 
-func retryForResult<T>(
+public func retryForResult<T>(
     _ description: String,
    retries: Int = 5,
    retryTimeout: Double = 1.0,
@@ -55,7 +55,7 @@ func retryForResult<T>(
 }
 
 @discardableResult
-func waitForResult<T>(
+public func waitForResult<T>(
     _ description: String,
     maxWaitTime: Double = 5.0,
     retryTimeout: Double = 1.0,
@@ -111,7 +111,7 @@ func waitForResult<T>(
 
 
 @discardableResult
-func waitForResult(
+public func waitForResult(
     _ description: String,
     maxWaitTime: Double = 5.0,
     retryTimeout: Double = 1.0,
@@ -136,7 +136,7 @@ func waitForResult(
     )
 }
 
-func retry(
+public func retry(
     _ description: String,
     retries: Int = 5,
     retryTimeout: Double = 1.0,

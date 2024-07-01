@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-class MobileElements<T: MobileElement> {
+public class MobileElements<T: MobileElement> {
     let query: XCUIElementQuery
 
     var count: Int {

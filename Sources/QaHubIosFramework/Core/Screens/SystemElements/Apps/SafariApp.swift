@@ -1,13 +1,8 @@
 import XCTest
 
-enum SharedUrls {
-    static let termsLink = "https://www.mistplay.com/legal/onplay-terms-of-use"
-    static let privacyLink = "https://www.mistplay.com/legal/onplay-privacy-notice"
-}
-
 let safari = SafariApp()
 
-class SafariApp: MobileApp {
+public class SafariApp: MobileApp {
     
     enum Identifiers {
         static let tabBarItemTitle = "TabBarItemTitle"

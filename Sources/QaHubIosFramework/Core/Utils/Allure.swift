@@ -25,7 +25,7 @@ private extension String {
     static let thread = "thread"
 }
 
-enum Allure {
+public enum Allure {
     static func allureId(_ value: String) {
         label(.allureId, value)
     }
@@ -127,7 +127,7 @@ enum Allure {
     }
 }
 
-enum Severity: String {
+public enum Severity: String {
     case blocker
     case critical
     case normal

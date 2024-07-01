@@ -1,7 +1,7 @@
 import Foundation
 
 @propertyWrapper
-struct Lateinit<T> {
+public struct Lateinit<T> {
     var propertyValue: T?
 
     var wrappedValue: T {

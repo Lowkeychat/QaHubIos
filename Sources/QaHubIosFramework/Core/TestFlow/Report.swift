@@ -1,6 +1,6 @@
 import XCTest
 
-class Report {
+public class Report {
     static var testId: String = ""
     static var testSteps: [TestStep] = []
     static var currentStepId = "0"

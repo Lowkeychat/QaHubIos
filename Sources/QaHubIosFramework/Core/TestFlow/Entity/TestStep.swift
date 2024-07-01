@@ -1,6 +1,6 @@
 import Foundation
 
-class TestStep: Codable {
+public class TestStep: Codable {
     var name: String
     var id: String
     var parentId: String

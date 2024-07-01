@@ -1,6 +1,6 @@
 import Foundation
 
-enum NetworkError: Error {
+public enum NetworkError: Error {
     case requestFailed(String)
     case errorStatusCode(String)
     case unacceptableResponse(String)
@@ -9,7 +9,7 @@ enum NetworkError: Error {
 }
 
 extension NetworkError: LocalizedError {
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case .requestFailed(let message):
             return "HTTP request failed: \n\(message)"

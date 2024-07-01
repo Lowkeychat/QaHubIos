@@ -1,6 +1,6 @@
 import XCTest
 
-extension Date {
+public extension Date {
     func toISOString() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")

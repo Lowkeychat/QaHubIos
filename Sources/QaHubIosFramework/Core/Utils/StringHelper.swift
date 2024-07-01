@@ -1,7 +1,7 @@
 import XCTest
 
 @available(iOS 16.0, *)
-extension String {
+public extension String {
     func filterDigits() -> String {
         return components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
     }

@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-extension MobileElement {
+public extension MobileElement {
 
     enum Direction: Int {
         case upward

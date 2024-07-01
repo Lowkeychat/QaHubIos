@@ -1,7 +1,7 @@
 import XCTest
 
 
-enum PredicateFormats: String {
+public enum PredicateFormats: String {
     case exists = "exists == 1"
     case notExists = "exists == 0"
     case isHittable = "isHittable == 1"
@@ -15,7 +15,7 @@ enum PredicateFormats: String {
 }
 
 
-extension XCUIElement {
+public extension XCUIElement {
     @discardableResult
     func waitForElement(_ predicateFormat: PredicateFormats = .exists,
                         timeout: Double = Timeout.long,
@@ -41,7 +41,7 @@ extension XCUIElement {
     }
 }
 
-extension XCUIElementQuery {
+public extension XCUIElementQuery {
     var lastMatch: XCUIElement {
         let lastMatchElement = self.element(boundBy: self.count - 1)
         return lastMatchElement

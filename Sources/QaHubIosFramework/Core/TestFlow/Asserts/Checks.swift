@@ -1,7 +1,7 @@
 import XCTest
 
 
-func checkThat<T>(
+public func checkThat<T>(
     _ description: String,
     errorMessage: String? = nil,
     retries: Int = 1,
@@ -30,7 +30,7 @@ func checkThat<T>(
     }
 }
 
-func checkThat<T>(
+public func checkThat<T>(
     _ description: String,
     errorMessage: String? = nil,
     retries: Int = 1,
@@ -48,7 +48,7 @@ func checkThat<T>(
     )
 }
 
-func checkThat(
+public func checkThat(
     _ description: String,
     errorMessage: String? = nil,
     retries: Int = 1,

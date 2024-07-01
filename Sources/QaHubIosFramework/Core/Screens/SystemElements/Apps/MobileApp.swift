@@ -1,7 +1,7 @@
 import XCTest
 
 
-class MobileApp {
+public class MobileApp {
     var app: XCUIApplication
    
     required init(_ bundleId: String) {
