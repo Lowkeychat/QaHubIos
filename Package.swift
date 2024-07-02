@@ -18,7 +18,7 @@ let package = Package(
     targets: [
         .target(
             name: "QaHubIos",
-            dependencies: ["Alamofire"]
+            dependencies: ["Alamofire", "XCTest"]
         ),
         .testTarget(
             name: "QaHubIosTests",
