@@ -1,7 +1,5 @@
 import XCTest
 
-let safari = SafariApp()
-
 public class SafariApp: MobileApp {
     
     enum Identifiers {
@@ -10,15 +8,15 @@ public class SafariApp: MobileApp {
         static let reloadButton = "ReloadButton"
     }
     
-    convenience init() {
+    public convenience init() {
         self.init(BundleIds.safari)
     }
     
-    lazy var tabBarItemTitle = childElement(Identifiers.tabBarItemTitle)
-    lazy var urlTextField = childElement(Identifiers.urlTextField)
-    lazy var reloadButton = childElement(Identifiers.reloadButton)
+    public lazy var tabBarItemTitle = childElement(Identifiers.tabBarItemTitle)
+    public lazy var urlTextField = childElement(Identifiers.urlTextField)
+    public lazy var reloadButton = childElement(Identifiers.reloadButton)
     
-    func checkCurrentUrl(_ expectableUrl: String) {
+    public func checkCurrentUrl(_ expectableUrl: String) {
         reloadButton.waitForElement()
         tabBarItemTitle.tapAtCenter()
         urlTextField.waitForElement()
