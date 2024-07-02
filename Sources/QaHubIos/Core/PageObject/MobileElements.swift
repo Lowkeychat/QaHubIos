@@ -2,9 +2,9 @@ import Foundation
 import XCTest
 
 open class MobileElements<T: MobileElement> {
-    let query: XCUIElementQuery
+    public let query: XCUIElementQuery
 
-    var count: Int {
+    public var count: Int {
         get { query.count }
     }
     

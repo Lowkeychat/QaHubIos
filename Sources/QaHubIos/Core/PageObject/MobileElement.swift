@@ -2,7 +2,7 @@ import Foundation
 import XCTest
 
 open class MobileElement: ScopingFunctionSupported {
-    let rootView: XCUIElement
+    public let rootView: XCUIElement
 
     required public init(_ element: XCUIElement = XCUIApplication()) {
         self.rootView = element
