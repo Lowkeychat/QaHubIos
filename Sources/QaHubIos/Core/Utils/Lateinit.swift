@@ -2,9 +2,9 @@ import Foundation
 
 @propertyWrapper
 public struct Lateinit<T> {
-    var propertyValue: T?
+    public var propertyValue: T?
 
-    var wrappedValue: T {
+    public var wrappedValue: T {
         get {
             guard let value = propertyValue else {
                 fatalError("Property being accessed without initialization")
@@ -19,5 +19,5 @@ public struct Lateinit<T> {
         }
     }
 
-    init() {}
+    public init() {}
 }
