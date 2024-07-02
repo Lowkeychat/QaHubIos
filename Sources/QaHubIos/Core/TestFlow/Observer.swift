@@ -1,13 +1,13 @@
 import XCTest
 
-class Observer: NSObject, XCTestObservation {
+public class Observer: NSObject, XCTestObservation {
     let qaHubClient: QaHubClient
     
     init(qaHubClient: QaHubClient) {
         self.qaHubClient = qaHubClient
     }
     
-    func testCaseDidFinish(_ testCase: XCTestCase) {
+    public func testCaseDidFinish(_ testCase: XCTestCase) {
         let qaHubClient = self.qaHubClient
         let testRunId = ProcessInfo.processInfo.environment["TEST_RUN_ID"] ?? ""
         let runner = ProcessInfo.processInfo.environment["RUNNER"] ?? ""
@@ -95,7 +95,7 @@ class Observer: NSObject, XCTestObservation {
         XCTestObservationCenter.shared.removeTestObserver(self)
     }
 
-    func testCase(_ testCase: XCTestCase,
+    public func testCase(_ testCase: XCTestCase,
                               didFailWithDescription description: String,
                               inFile filePath: String?,
                               atLine lineNumber: Int) {

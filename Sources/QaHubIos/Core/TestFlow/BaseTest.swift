@@ -35,7 +35,7 @@ open class BaseTest: XCTestCase {
     }
    
     
-    func addAutoSkipAlertsMonitor() {
+    public func addAutoSkipAlertsMonitor() {
         let monitor = addUIInterruptionMonitor(withDescription: "System dialog") { alert -> Bool in
             Report.step("Auto-accepting alert") {
                 alert.buttons.element(boundBy: 1).tap()
@@ -47,7 +47,7 @@ open class BaseTest: XCTestCase {
         interruptionMonitors.append(monitor)
     }
     
-    func clearInterruptionMonitors() {
+    public func clearInterruptionMonitors() {
         Report.step("Disable interruption monitiors") {
             interruptionMonitors.forEach { monitor in
                 removeUIInterruptionMonitor(monitor)
@@ -58,6 +58,6 @@ open class BaseTest: XCTestCase {
     }
 }
 
-func autotestLog(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+public func autotestLog(_ items: Any..., separator: String = " ", terminator: String = "\n") {
     print(items, separator: separator, terminator: terminator)
 }
