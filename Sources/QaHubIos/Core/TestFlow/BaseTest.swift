@@ -5,7 +5,8 @@ open class BaseTest: XCTestCase {
     public var skipAlerts: Bool = true
     public var errorMessage: String?
     public var failureScreenshot: Data? = nil
-    open var qaHubClient: QaHubClient? = nil
+    
+    public var qaHubClient: QaHubClient? = nil
     
     private var interruptionMonitors: [NSObjectProtocol] = []
     
@@ -14,6 +15,7 @@ open class BaseTest: XCTestCase {
         
         super.setUp()
         
+        setupQaHubClient()
         if let qaHubClient = qaHubClient {
             XCTestObservationCenter.shared.addTestObserver(Observer(qaHubClient: qaHubClient))
         }
@@ -21,7 +23,7 @@ open class BaseTest: XCTestCase {
         if skipAlerts {
             addAutoSkipAlertsMonitor()
         }
-    }    
+    }
    
     open override func tearDown() {
         if (errorMessage != nil) {
@@ -54,6 +56,10 @@ open class BaseTest: XCTestCase {
             
             interruptionMonitors = []
         }
+    }
+    
+    open func setupQaHubClient() {
+        self.qaHubClient = nil
     }
 }
 
