@@ -2,13 +2,13 @@ import XCTest
 
 
 public class MobileApp {
-    var app: XCUIApplication
+    public var app: XCUIApplication
    
-    required init(_ bundleId: String) {
+    public required init(_ bundleId: String) {
         self.app = XCUIApplication(bundleIdentifier: bundleId)
     }
 
-    func childElement<T: MobileElement>(_ identifier: String, _ type: XCUIElement.ElementType = .any) -> T {
+    public func childElement<T: MobileElement>(_ identifier: String, _ type: XCUIElement.ElementType = .any) -> T {
         T(
             app.descendants(matching: .any)
                .matching(identifier: identifier)
@@ -16,18 +16,18 @@ public class MobileApp {
         )
     }
     
-    func childElements<R: MobileElement, T: MobileElements<R>>(_ identifier: String, _ type: XCUIElement.ElementType = .any) -> T {
+    public func childElements<R: MobileElement, T: MobileElements<R>>(_ identifier: String, _ type: XCUIElement.ElementType = .any) -> T {
         T(
             app.descendants(matching: .any)
                .matching(identifier: identifier)
         )
     }
     
-    func close() {
+    public func close() {
         app.terminate()
     }
     
-    func hide() {
+    public func hide() {
         app.hide()
     }
 }
