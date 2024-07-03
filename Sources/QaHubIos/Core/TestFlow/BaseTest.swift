@@ -2,14 +2,14 @@ import XCTest
 import OSLog
 
 open class BaseTest: XCTestCase {
-    var skipAlerts: Bool = true
-    var errorMessage: String?
-    var failureScreenshot: Data? = nil
-    var qaHubClient: QaHubClient? = nil
+    public var skipAlerts: Bool = true
+    public var errorMessage: String?
+    public var failureScreenshot: Data? = nil
+    open var qaHubClient: QaHubClient? = nil
     
     private var interruptionMonitors: [NSObjectProtocol] = []
     
-    public override func setUp() {
+    open override func setUp() {
         Report.clear()
         
         super.setUp()
@@ -21,10 +21,9 @@ open class BaseTest: XCTestCase {
         if skipAlerts {
             addAutoSkipAlertsMonitor()
         }
-    }
-    
+    }    
    
-    public override func tearDown() {
+    open override func tearDown() {
         if (errorMessage != nil) {
             failureScreenshot = XCUIScreen.main.screenshot().image.jpegData(compressionQuality: 0.5)
         }
