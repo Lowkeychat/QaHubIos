@@ -2,7 +2,7 @@ import Foundation
 import XCTest
 import Alamofire
 
-enum ContentType: String {
+public enum ContentType: String {
     case applicationJson = "application/json"
     case passedInHeader = "passedInHeader"
 }
@@ -13,7 +13,7 @@ open class HttpClient {
     private let sessionManager: Session
 
     //IT is impossible to ignore all SSL certs errors in Swift, so we need to create HTTP client that configuring each host that shoul skip SSL Verification
-    init (disabledSslHosts: [String] = []) {
+    public init (disabledSslHosts: [String] = []) {
         var evaluators: [String: DisabledTrustEvaluator] = [:]
     
 
@@ -97,7 +97,7 @@ open class HttpClient {
     }
 
     @discardableResult
-    func request<T: Codable>(url: String,
+    public func request<T: Codable>(url: String,
                                     httpMethod: HTTPMethod = .get,
                                     headers: [String: String] = [:],
                                     parameters: [String: String?] = [:],

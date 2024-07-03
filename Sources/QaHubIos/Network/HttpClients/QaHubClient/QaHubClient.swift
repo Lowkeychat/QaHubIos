@@ -1,11 +1,11 @@
 import Foundation
 
-class QaHubClient {
+public class QaHubClient {
     let baseUrl: String
     let qaHubProject: String
     let client = HttpClient()
     
-    init(baseUrl: String, qaHubProject: String) {
+    public init(baseUrl: String, qaHubProject: String) {
         self.baseUrl = baseUrl
         self.qaHubProject = qaHubProject
     }

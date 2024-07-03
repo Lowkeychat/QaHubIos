@@ -3,7 +3,7 @@ import XCTest
 public class Observer: NSObject, XCTestObservation {
     let qaHubClient: QaHubClient
     
-    init(qaHubClient: QaHubClient) {
+    public init(qaHubClient: QaHubClient) {
         self.qaHubClient = qaHubClient
     }
     
