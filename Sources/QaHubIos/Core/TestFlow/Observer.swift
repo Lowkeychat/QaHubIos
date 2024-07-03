@@ -30,18 +30,18 @@ public class Observer: NSObject, XCTestObservation {
         let fullName = "\(targetName).\(suitName).\(testName)"
         
         
-        if testCase is BaseTest && testRunId != "" {
+        if testCase is QHBaseTest && testRunId != "" {
             let duration = Double(testCase.testRun!.testDuration)
             var status = "SUCCESS"
             var message: String?
             var attachments: [TestResultAttachment] = []
             
-            if (testCase as! BaseTest).errorMessage != nil {
+            if (testCase as! QHBaseTest).errorMessage != nil {
                 status = "FAILURE"
-                message = (testCase as! BaseTest).errorMessage
+                message = (testCase as! QHBaseTest).errorMessage
                 
                 //sending screenshot to QA Hub
-                let imageData = (testCase as! BaseTest).failureScreenshot
+                let imageData = (testCase as! QHBaseTest).failureScreenshot
                 
                 if let imageData = imageData {
                     let attachment = try? qaHubClient.sendScreenshot(
@@ -100,8 +100,8 @@ public class Observer: NSObject, XCTestObservation {
                               inFile filePath: String?,
                               atLine lineNumber: Int) {
         Report.currentStepId = "0"
-        if testCase is BaseTest {
-            (testCase as! BaseTest).errorMessage = description
+        if testCase is QHBaseTest {
+            (testCase as! QHBaseTest).errorMessage = description
             
             Report.step("Printing the elements tree") {
                 autotestLog(XCUIApplication().debugDescription)
