@@ -1,7 +1,7 @@
 import XCTest
 import OSLog
 
-open class BaseTest: XCTestCase {
+open class QHBaseTest: XCTestCase {
     public var skipAlerts: Bool = true
     public var errorMessage: String?
     public var failureScreenshot: Data? = nil
@@ -18,6 +18,8 @@ open class BaseTest: XCTestCase {
         setupQaHubClient()
         if let qaHubClient = qaHubClient {
             XCTestObservationCenter.shared.addTestObserver(Observer(qaHubClient: qaHubClient))
+        } else {
+            autotestLog("Qa Hub Client is not configured. Please set up your QA Hub client in your implementation of BaseTest")
         }
        
         if skipAlerts {
