@@ -26,6 +26,8 @@ open class BaseTest: XCTestCase {
     }
    
     open override func tearDown() {
+        super.tearDown()
+        
         if (errorMessage != nil) {
             failureScreenshot = XCUIScreen.main.screenshot().image.jpegData(compressionQuality: 0.5)
         }
