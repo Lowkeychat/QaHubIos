@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'QaHubIos'
-  s.version          = '1.0.1'
+  s.version          = '1.0.7'
   s.summary          = 'Basic autotest framework for IOS tests integrated with QA Hub'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,8 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.dependency 'Alamofire', '~> 5.9.0'
+  s.dependency 'Alamofire', '~> 5.8.1'
+  s.framework = 'XCTest'
   s.source_files = 'Source/**/*.swift'
   
   # s.resource_bundles = {
