@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'QaHubIos_Example' do
+  pod 'QaHubIos', :path => '../'
+
+  target 'QaHubIos_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
