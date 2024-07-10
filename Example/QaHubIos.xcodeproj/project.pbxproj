@@ -39,14 +39,14 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		671236FD47807309A5968F13 /* Pods_QaHubIos_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QaHubIos_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E0B1C5ACF55AB80D8101301 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		7E0B1C5ACF55AB80D8101301 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		855340C6E76AC8852513DF4A /* Pods-QaHubIos_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QaHubIos_Tests.debug.xcconfig"; path = "Target Support Files/Pods-QaHubIos_Tests/Pods-QaHubIos_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACA5F4811F76A1FEC88432C1 /* Pods-QaHubIos_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QaHubIos_Example.debug.xcconfig"; path = "Target Support Files/Pods-QaHubIos_Example/Pods-QaHubIos_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AED582E0C03C605B84C0788B /* Pods_QaHubIos_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QaHubIos_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAB667A3F93DF3DE658FE131 /* QaHubIos.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = QaHubIos.podspec; path = ../QaHubIos.podspec; sourceTree = "<group>"; };
+		CAB667A3F93DF3DE658FE131 /* QaHubIos.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = QaHubIos.podspec; path = ../QaHubIos.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DBF679B80CAB6F955951A249 /* Pods-QaHubIos_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QaHubIos_Example.release.xcconfig"; path = "Target Support Files/Pods-QaHubIos_Example/Pods-QaHubIos_Example.release.xcconfig"; sourceTree = "<group>"; };
 		ED324593EDAE2FD63C315F8A /* Pods-QaHubIos_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QaHubIos_Tests.release.xcconfig"; path = "Target Support Files/Pods-QaHubIos_Tests/Pods-QaHubIos_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		EFBA65242FDAF419C8F012B5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		EFBA65242FDAF419C8F012B5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,6 @@
 				855340C6E76AC8852513DF4A /* Pods-QaHubIos_Tests.debug.xcconfig */,
 				ED324593EDAE2FD63C315F8A /* Pods-QaHubIos_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -313,10 +313,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-QaHubIos_Example/Pods-QaHubIos_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/QaHubIos/QaHubIos.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QaHubIos.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

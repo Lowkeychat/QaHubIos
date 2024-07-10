@@ -1,0 +1,6 @@
+framework module QaHubIos {
+  umbrella header "QaHubIos-umbrella.h"
+
+  export *
+  module * { export * }
+}

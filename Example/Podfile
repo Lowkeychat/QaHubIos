@@ -4,6 +4,7 @@ platform :ios, '10.0'
 
 target 'QaHubIos_Example' do
   pod 'QaHubIos', :path => '../'
+  pod 'Alamofire', '~> 5.9.0'
 
   target 'QaHubIos_Tests' do
     inherit! :search_paths

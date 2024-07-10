@@ -1,0 +1,27 @@
+{
+  "name": "QaHubIos",
+  "version": "0.1.0",
+  "summary": "A short description of QaHubIos.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/m.osipov/QaHubIos",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "m.osipov": "mark.osipov@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/m.osipov/QaHubIos.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "QaHubIos/Classes/**/*",
+  "dependencies": {
+    "Alamofire": [
+      "~> 5.9.0"
+    ]
+  }
+}

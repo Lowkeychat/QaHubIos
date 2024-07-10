@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.9.1)
+  - QaHubIos (0.1.0):
+    - Alamofire (~> 5.9.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.9.0)
+  - QaHubIos (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+
+EXTERNAL SOURCES:
+  QaHubIos:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  QaHubIos: 5a3dc0f99a06564af81b714085b11ea90856dabf
+
+PODFILE CHECKSUM: 826a681f975440429d6c09776f2be39491edcca4
+
+COCOAPODS: 1.14.2

@@ -1,0 +1,6 @@
+framework module Pods_QaHubIos_Example {
+  umbrella header "Pods-QaHubIos_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

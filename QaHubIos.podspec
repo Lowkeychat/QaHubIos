@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'QaHubIos'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of QaHubIos.'
+  s.version          = '1.0.1'
+  s.summary          = 'Basic autotest framework for IOS tests integrated with QA Hub'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -30,7 +30,8 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'QaHubIos/Classes/**/*'
+  s.dependency 'Alamofire', '~> 5.9.0'
+  s.source_files = 'Source/**/*.swift'
   
   # s.resource_bundles = {
   #   'QaHubIos' => ['QaHubIos/Assets/*.png']
