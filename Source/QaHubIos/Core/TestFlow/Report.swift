@@ -74,7 +74,7 @@ public class Report {
         
         @Lateinit var result: T
         autotestLog("[\(Date.localDate())]")
-        autotestLog("Starting step \(newStep.id)")
+        autotestLog("Starting step \(newStep.id):")
 
         do {
             try XCTContext.runActivity(named: activityName) { _ in
